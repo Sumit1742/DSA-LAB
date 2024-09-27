@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main(){
+	int a[75];
+	int i,b,w,l,ans;
+	printf("enter the index of array");
+	scanf("%d",&i);
+	printf("enter the index of base address of array");
+	scanf("%d",&b);
+	printf("enter the index of size of array");
+	scanf("%d",&w);
+	printf("enter the index of lower bound of array");
+	scanf("%d",&l);
+    ans = b+w*(i-l); 
+	printf("the address of array is %d",ans);
+	return 0;
+}
