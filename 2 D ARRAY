@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main(){
+	int m1[10],n1[10];
+	int i,b,w,l1,l2,ans1,n,m,j,ans2;
+	printf("enter the index of row array=");
+	scanf("%d",&i);
+	printf("enter the index of col  array=");
+	scanf("%d",&j);
+	printf("enter the no. of elements of row array=");
+	scanf("%d",&n);
+	printf("enter the no. of elements of col array=");
+	scanf("%d",&m);
+	printf("enter the index of base address of array=");
+	scanf("%d",&b);
+	printf("enter the index of size of array=");
+	scanf("%d",&w);
+	printf("enter the index of lower bound of array=");
+	scanf("%d",&l1);
+    ans1 = b+w*((i-l1) * n + (j-l2)); 
+	printf("the address of array is = %d",ans1);
+	ans2 = b+w* ((i-l1)+(j-l2)*m);
+	return 0;
+}
