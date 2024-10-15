@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<stdlib.h>
+typedef struct node{
+	int info;
+	struct node *nxt;
+}N;
+void InsertAtLast(N *start,int item){
+	N *p=(N*) malloc (sizeof(N));
+	if(p==NULL){
+		printf("OVERFLOW");
+	}
+	else{
+		if(start==NULL){
+			p->info=item;
+			p->nxt=NULL;
+			start=p;
+		}
+		else{
+			p->info=item;
+			p->nxt=NULL;
+			N *t=start;
+			while(t->nxt!=NULL){
+				t=t->nxt;
+			}
+			t->nxt=p;
+		}
+	}
+	while(start != NULL){
+		printf("%d\n",start->info);
+		start=start->nxt;
+	}
+}
+int main(){
+	int item=10;
+	N *start;
+	
+	InsertAtLast(start,item);
+	InsertAtLast(start,item);
+	return 0;
+}
