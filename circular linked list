@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+struct Node{
+	int data ;
+	struct Node *next;
+	
+};
+void cirlinkedlist (struct Node *head){
+	
+	struct Node* ptr = head;
+	do{
+		printf("Element is %d\n",ptr->data);
+		ptr=ptr->next;
+	}
+	while(ptr != head);
+	
+	
+}
+int main(){
+	struct Node *head;
+	struct Node *sec;
+	struct Node *third;
+	struct Node *fourth;
+	
+	head = (struct Node*)malloc(sizeof (struct Node));
+	sec = (struct Node*)malloc(sizeof (struct Node));
+	third = (struct Node*)malloc(sizeof (struct Node));
+	fourth = (struct Node*)malloc(sizeof (struct Node));
+	
+	head -> data =6;
+	head-> next = sec;
+	sec -> data = 9;
+	sec -> next = third;
+	third -> data = 8;
+	third -> next = fourth;
+	fourth -> data = 3;
+	fourth -> next = head;
+	cirlinkedlist(head);
+	return 0;
+	
+
+	
+	
+}
