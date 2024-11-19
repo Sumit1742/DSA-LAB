@@ -1,0 +1,50 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node {
+    int info;
+    struct node *prev;
+    struct node *nxt;
+};
+
+void insert_first(struct node **start, struct node **last, int item) {
+    struct node *p = (struct node *)malloc(sizeof(struct node));
+
+    if (p == NULL) {
+        printf("Memory allocation failed\n");
+        return;
+    }
+
+    p->info = item;
+    p->nxt = NULL;
+    p->prev = NULL;
+
+    if (*start == NULL) {
+        *start = *last = p;
+    } else {
+        p->nxt = *start;
+        (*start)->prev = p;
+        *start = p;
+    }
+}
+
+int main() {
+    struct node *start = NULL, *last = NULL;
+    int item;
+
+    printf("Enter an integer to insert at the beginning: ");
+    scanf("%d", &item);
+
+    insert_first(&start, &last, item);
+
+    struct node *temp = start;
+    printf("List after insertion: ");
+    while (temp != NULL) {
+        printf("%d ", temp->info);
+        temp = temp->nxt;
+    }
+    printf("\n");
+
+    return 0;
+}
